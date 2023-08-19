@@ -1,0 +1,4 @@
+<div *ngFor="let task_item of tasks">
+    <app-task [task]="task_item" (deleteEvent)="deleteTask($event)"></app-task>
+    <!-- going to be the value of the id valye in the emitter "$ event"  -->
+</div>

@@ -1,0 +1,24 @@
+<div class="card">
+    <div class="card-header text-light" [ngClass]="{'bg-success':task.priority_level==='Low',
+                                                                    'bg-dark': task.priority_level==='Medium',
+                                                                    'bg-warning':task.priority_level==='High',
+                                                                    'bg-danger': task.priority_level === 'Critical'}">
+    <h4 class="card-title">{{task.title}}</h4>
+    </div>
+    <div class="card-header body bg-primary text-white">
+     <p>{{task.description}}</p>
+     <hr>
+     <h3> {{task.category}}</h3>
+     <hr>
+     <h3>{{task.task_date |date }}</h3>
+     <hr>
+     <h3> {{task.priority_level}}</h3>
+     <hr>
+     <h2>{{task.progress_level}}</h2>
+     <hr>
+     <button type="button" class= "btn btn-warning me-2" [routerLink]="['/edit-task', task.id]">Edit</button>
+     <button type="button" class= "btn btn-danger"(click)="deleteAction()">Delete</button>
+    </div>
+ 
+
+</div>
